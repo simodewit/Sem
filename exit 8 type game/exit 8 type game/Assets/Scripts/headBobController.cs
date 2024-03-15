@@ -9,6 +9,7 @@ public class headBobController : MonoBehaviour
 
     [SerializeField, Range(0, 0.1f)] private float amplitude = 0.015f;
     [SerializeField, Range(0, 30)] private float frequency = 10.0f;
+    [SerializeField, Range(0, 1.5f)] private float snapBack = 0.5f;
 
     [SerializeField] private Transform camera = null;
     [SerializeField] private Transform cameraHolder = null;
@@ -69,7 +70,7 @@ public class headBobController : MonoBehaviour
             return;
         }
 
-        camera.localPosition = Vector3.Lerp(camera.localPosition, startPos, 1 * Time.deltaTime); 
+        camera.localPosition = Vector3.Lerp(camera.localPosition, startPos, snapBack * Time.deltaTime); 
     }
 
     private Vector3 FocusTarget()

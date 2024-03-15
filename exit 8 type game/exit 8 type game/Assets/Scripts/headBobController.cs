@@ -31,7 +31,7 @@ public class headBobController : MonoBehaviour
         }
 
         CheckMotion();
-        //ResetPosition();
+        ResetPosition();
         camera.LookAt(FocusTarget());
     }
 
@@ -54,7 +54,7 @@ public class headBobController : MonoBehaviour
 
     private Vector3 FootStepMotion()
     {
-        Vector3 pos = Vector3.zero;
+        Vector3 pos = startPos;
 
         pos.y += Mathf.Sin(Time.time * frequency) * amplitude;
         pos.x += Mathf.Cos(Time.time * frequency / 2) * amplitude * 2;

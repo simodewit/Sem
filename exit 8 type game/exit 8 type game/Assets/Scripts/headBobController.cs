@@ -32,13 +32,8 @@ public class headBobController : MonoBehaviour
         }
 
         CheckMotion();
-        ResetPosition();
+        //ResetPosition();
         _camera.LookAt(FocusTarget());
-    }
-
-    private void PlayMotion(Vector3 motion)
-    {
-        _camera.localPosition = motion;
     }
 
     private void CheckMotion()
@@ -51,6 +46,11 @@ public class headBobController : MonoBehaviour
         }
 
         PlayMotion(FootStepMotion());
+    }
+
+    private void PlayMotion(Vector3 motion)
+    {
+        _camera.localPosition = motion;
     }
 
     private Vector3 FootStepMotion()

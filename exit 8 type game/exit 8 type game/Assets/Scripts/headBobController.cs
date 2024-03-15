@@ -13,7 +13,7 @@ public class headBobController : MonoBehaviour
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Transform _cameraHolder = null;
 
-    private float _toggleSpeed = 3.0f;
+    [SerializeField] private float _toggleSpeed = 3.0f;
     private Vector3 _startPos;
     private CharacterController _controller;
 

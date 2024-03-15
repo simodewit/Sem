@@ -29,7 +29,10 @@ public class headBobController : MonoBehaviour
         if (!_enable)
         {
             return;
+            print("is dissabled");
         }
+
+        print("is enabled");
 
         CheckMotion();
         //ResetPosition();
@@ -42,8 +45,11 @@ public class headBobController : MonoBehaviour
 
         if (speed < _toggleSpeed)
         {
+            print("isnt going fast enough");
             return;
         }
+
+        print("goes fast enough");
 
         PlayMotion(FootStepMotion());
     }
@@ -75,6 +81,8 @@ public class headBobController : MonoBehaviour
 
     private Vector3 FocusTarget()
     {
+        print("plays focus target function");
+
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + _cameraHolder.localPosition.y, transform.position.z);
         pos += _cameraHolder.forward * 15.0f;
 

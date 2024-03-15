@@ -31,8 +31,8 @@ public class headBobController : MonoBehaviour
         }
 
         CheckMotion();
-        ResetPosition();
-        //camera.LookAt(FocusTarget());
+        //ResetPosition();
+        camera.LookAt(FocusTarget());
     }
 
     private void CheckMotion()

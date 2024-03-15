@@ -5,8 +5,6 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
-
     [Header("Keybinds")]
     public KeyCode sprintKey = KeyCode.LeftShift;
 

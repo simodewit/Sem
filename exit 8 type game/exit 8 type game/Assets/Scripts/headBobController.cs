@@ -26,7 +26,11 @@ public class headBobController : MonoBehaviour
 
     private void Update()
     {
-        if (!_enable) return;
+        if (!_enable)
+        {
+            return;
+        }
+
         CheckMotion();
         ResetPosition();
         _camera.LookAt(FocusTarget());
@@ -41,7 +45,10 @@ public class headBobController : MonoBehaviour
     {
         float speed = new Vector3(_controller.velocity.x, 0, _controller.velocity.z).magnitude;
 
-        if (speed < _toggleSpeed) return;
+        if (speed < _toggleSpeed)
+        {
+            return;
+        }
 
         PlayMotion(FootStepMotion());
     }
@@ -49,14 +56,20 @@ public class headBobController : MonoBehaviour
     private Vector3 FootStepMotion()
     {
         Vector3 pos = Vector3.zero;
+
         pos.y += Mathf.Sin(Time.time * _frequency) * _amplitude;
         pos.x += Mathf.Cos(Time.time * _frequency / 2) * _amplitude * 2;
+
         return pos;
     }
 
     private void ResetPosition()
     {
-        if (_camera.localPosition == _startPos) return;
+        if (_camera.localPosition == _startPos)
+        {
+            return;
+        }
+
         _camera.localPosition = Vector3.Lerp(_camera.localPosition, _startPos, 1 * Time.deltaTime); 
     }
 
@@ -64,6 +77,7 @@ public class headBobController : MonoBehaviour
     {
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + _cameraHolder.localPosition.y, transform.position.z);
         pos += _cameraHolder.forward * 15.0f;
+
         return pos;
     }
 }

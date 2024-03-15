@@ -40,13 +40,12 @@ public class headBobController : MonoBehaviour
     {
         float speed = new Vector3(_controller.velocity.x, 0, _controller.velocity.z).magnitude;
 
+        print(_controller.velocity.magnitude);
+
         if (speed < _toggleSpeed)
         {
-            print("isnt going fast enough");
             return;
         }
-
-        print("goes fast enough");
 
         PlayMotion(FootStepMotion());
     }
